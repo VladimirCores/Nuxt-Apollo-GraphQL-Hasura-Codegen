@@ -14,24 +14,3 @@ const articles = [];
     </div>
   </div>
 </template>
-
-<!--<script>-->
-<!--import article from '~/apollo/queries/fetchArticle'-->
-
-<!--export default {-->
-<!--  apollo: {-->
-<!--    article: {-->
-<!--      query: article,-->
-<!--      prefetch: ({ route }) => ({ id: route.params.id }),-->
-<!--      variables() {-->
-<!--        return { id: this.$route.params.id }-->
-<!--      }-->
-<!--    }-->
-<!--  },-->
-<!--  head() {-->
-<!--    return {-->
-<!--      title: 'Articles by Author'-->
-<!--    }-->
-<!--  }-->
-<!--}-->
-<!--</script>-->

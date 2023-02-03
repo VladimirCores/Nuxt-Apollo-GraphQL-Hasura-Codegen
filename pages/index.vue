@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useAuthorQuery } from '@/apollo/client';
+import { useAuthorQuery, Author } from '@/apollo/client';
 const { result, loading } = useAuthorQuery();
-const authors = computed(() => result.value?.author || []);
+const authors = computed<Array<Author>>(() => result.value?.author || []);
 </script>
 <template>
   <div>
@@ -18,19 +18,3 @@ const authors = computed(() => result.value?.author || []);
     </ul>
   </div>
 </template>
-
-<!--<script>-->
-<!--import author from "/apollo/queries/fetchAuthor";-->
-
-<!--export default {-->
-<!--  apollo: {-->
-<!--    author: {-->
-<!--      prefetch: true,-->
-<!--      query: author,-->
-<!--    },-->
-<!--  },-->
-<!--  head: {-->
-<!--    title: "Authors of Blog",-->
-<!--  },-->
-<!--};-->
-<!--</script>-->
