@@ -1,5 +1,7 @@
 # Nuxt 3 Apollo GraphQL (Hasura)
 
+![Preview](./preview.png)
+
 ## Setup
 
 ```bash
