@@ -1,13 +1,19 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
+const SERVER: string = process.env.GQL_SERVER!;
+const SECRET: string = process.env.GQL_SERVER_ADMIN_SECRET!;
+
+console.log('SERVER', SERVER);
+console.log('SECRET', SECRET);
+
 const config: CodegenConfig = {
   overwrite: true,
   emitLegacyCommonJSImports: false,
   schema: [
     {
-      'GQL_SERVER/graphql': {
+      [SERVER]: {
         headers: {
-          'x-hasura-admin-secret': 'GQL_SERVER_ADMIN_SECRET',
+          'x-hasura-admin-secret': SECRET,
         },
       },
     },

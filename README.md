@@ -7,11 +7,11 @@
 ```bash
 yarn install
 ```
-Setup GraphQL links in (:
-- .graphqlconfig
-- nuxt.config.ts
-- codegen.ts
-
+Setup GraphQL params in .env:
+```
+GQL_SERVER=
+GQL_SERVER_ADMIN_SECRET=
+```
 ```bash
 yarn codegen
 ```

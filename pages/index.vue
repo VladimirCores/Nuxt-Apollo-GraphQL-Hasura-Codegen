@@ -1,20 +1,27 @@
 <script setup lang="ts">
-import { useAuthorQuery, Author } from '@/apollo/client';
-const { result, loading } = useAuthorQuery();
-const authors = computed<Array<Author>>(() => result.value?.author || []);
+const authors = useAuthors();
+const onReloadAuthorsClick = () => {
+  console.log('onReloadAuthorsClick');
+  authors.value.fetchMore({});
+};
 </script>
 <template>
   <div>
     <h3>Authors</h3>
-    <div v-if="loading">
+    <div v-if="authors.loading">
       Loading...
     </div>
-    <ul v-else-if="result && authors.length">
-      <li v-for="item in authors" :key="item.id">
-        <NuxtLink :to="`/article/${item.id}`">
-          {{ item.name }}
-        </NuxtLink>
-      </li>
-    </ul>
+    <div v-else>
+      <button @click="onReloadAuthorsClick">
+        Reload authors
+      </button>
+      <ul>
+        <li v-for="item in authors.list" :key="item.id">
+          <NuxtLink :to="`/article/${item.id}`">
+            {{ item.name }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>

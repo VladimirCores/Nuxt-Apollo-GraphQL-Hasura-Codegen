@@ -4,11 +4,11 @@
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
-        "url": "GQL_SERVER/graphql",
+        "url": "${env:GQL_SERVER}",
         "headers": {
-          "x-hasura-admin-secret": "GQL_SERVER_ADMIN_SECRET"
+          "x-hasura-admin-secret": "${env:GQL_SERVER_ADMIN_SECRET}"
         },
-        "introspect": false
+        "introspect": true
       }
     }
   }

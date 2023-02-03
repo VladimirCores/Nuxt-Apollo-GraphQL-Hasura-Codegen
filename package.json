@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "codegen": "graphql-codegen-esm --config codegen.ts"
+    "codegen": "dotenv -e .env -- cross-var graphql-codegen --config codegen.ts"
   },
   "devDependencies": {
     "@graphql-codegen/add": "^3.2.3",
@@ -19,12 +19,14 @@
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@vue/apollo-composable": "^4.0.0-beta.1",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^7.0.0",
     "eslint": "^8.33.0",
     "graphql": "^16.6.0",
-    "typescript": "^4.9.5",
     "nuxt": "^3.1.1",
+    "typescript": "^4.9.5",
     "vite-plugin-eslint": "^1.8.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
