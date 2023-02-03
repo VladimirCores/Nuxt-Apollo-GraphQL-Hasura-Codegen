@@ -1,0 +1,15 @@
+{
+  "name": "Untitled GraphQL Schema",
+  "schemaPath": "./apollo/graphql.schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "GQL_SERVER/graphql",
+        "headers": {
+          "x-hasura-admin-secret": "GQL_SERVER_ADMIN_SECRET"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
